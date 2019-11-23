@@ -1,0 +1,52 @@
+<template>
+    <div id="researchProject">
+        <img src="../../static/科研项目/show.jpg" style="width:100%;height:30vh;border:1px solid gray"></img>
+
+
+        <div v-if="projectInfo != []">
+            <div v-for="item,inx in projectInfo" style="margin:18px;margin-bottom:30px">
+                <h1 style="margin:15px;" align="">{{inx}}</h1>
+                <div v-for="item2,inx2 in item"  align="left" id="projectName">
+                <span><i class="el-icon-circle-check" style="color:#04BFEA"></i> {{inx2+1}}. {{item2}}</span>
+                </div>
+            </div>
+        </div>
+        
+  </div>
+</template>
+
+<script>
+import researchProject from '../../static/科研项目/researchProject'
+  export default {
+    name:'researchProject',
+    data(){
+        return {
+            projectInfo:researchProject.projectInfo,
+        }
+    }
+  }
+</script>
+
+
+<style>
+  *{
+      margin:0px;
+      padding:0px;
+  }
+  #researchProject{
+    
+  }
+  #projectName{
+       font-size:19px;
+       margin-left:15px;
+  }
+  @media screen and (max-width: 820px) {
+    #projectName{
+        font-size:15px;
+        margin-left:0px;
+    }
+    h1{
+        font-size:20px;
+    }
+  }
+</style>
