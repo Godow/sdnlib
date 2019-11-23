@@ -16,27 +16,27 @@
       text-color="#fff"
       menu-trigger="click"
       active-text-color="#ffd04b">
-      <div id="SDN">{{libName}}</div>
+      <div id="SDN" onselectstart="return false">{{libName}}</div>
 
-      <el-menu-item index="1" @click="mySlot='mainPage'" class="menuItem">{{navContent[0]}}</el-menu-item>
-      <el-menu-item index="8"  @click="mySlot='paper'" class="menuItem">{{navContent[1]}}</el-menu-item>
-      <el-menu-item index="7"  @click="mySlot='dynamic'" class="menuItem">{{navContent[2]}}</el-menu-item>
-      <el-menu-item index="3"  @click="mySlot='researchProject'" class="menuItem">{{navContent[3]}}</el-menu-item>
-      <el-menu-item index="4" @click="mySlot='theRoadofSDN'" class="menuItem">{{navContent[4]}}</el-menu-item>
-      <el-menu-item index="5"  @click="mySlot='academicTeam'" class="menuItem">{{navContent[5]}}</el-menu-item>
-      <el-menu-item index="9"  @click="mySlot='recruit'" class="menuItem">{{navContent[6]}}</el-menu-item>
-      <el-menu-item index="6"  @click="mySlot='entertainment'" class="menuItem">{{navContent[7]}}</el-menu-item>
+      <el-menu-item index="1" @click="mySlot='mainPage'" class="menuItem" onselectstart="return false">{{navContent[0]}}</el-menu-item>
+      <el-menu-item index="8"  @click="mySlot='paper'" class="menuItem" onselectstart="return false">{{navContent[1]}}</el-menu-item>
+      <el-menu-item index="7"  @click="mySlot='dynamic'" class="menuItem" onselectstart="return false">{{navContent[2]}}</el-menu-item>
+      <el-menu-item index="3"  @click="mySlot='researchProject'" class="menuItem" onselectstart="return false">{{navContent[3]}}</el-menu-item>
+      <el-menu-item index="4" @click="mySlot='theRoadofSDN'" class="menuItem" onselectstart="return false">{{navContent[4]}}</el-menu-item>
+      <el-menu-item index="5"  @click="mySlot='academicTeam'" class="menuItem" onselectstart="return false">{{navContent[5]}}</el-menu-item>
+      <el-menu-item index="9"  @click="mySlot='recruit'" class="menuItem" onselectstart="return false">{{navContent[6]}}</el-menu-item>
+      <el-menu-item index="6"  @click="mySlot='entertainment'" class="menuItem" onselectstart="return false">{{navContent[7]}}</el-menu-item>
 
       <el-submenu index="2" class="phoneMenuItem" >
         <template slot="title"><i type="primary" class="el-icon-menu"></i></template>
-        <el-menu-item index="1" @click="mySlot='mainPage'">{{navContent[0]}}</el-menu-item>
-        <el-menu-item index="8"  @click="mySlot='paper'">{{navContent[1]}}</el-menu-item>
-        <el-menu-item index="7"  @click="mySlot='dynamic'" >{{navContent[2]}}</el-menu-item>
-        <el-menu-item index="3"  @click="mySlot='researchProject'" >{{navContent[3]}}</el-menu-item>
-        <el-menu-item index="4" @click="mySlot='theRoadofSDN'" >{{navContent[4]}}</el-menu-item>
-        <el-menu-item index="5"  @click="mySlot='academicTeam'" >{{navContent[5]}}</el-menu-item>
-        <el-menu-item index="9"  @click="mySlot='recruit'">{{navContent[6]}}</el-menu-item>
-        <el-menu-item index="6"  @click="mySlot='entertainment'" >{{navContent[7]}}</el-menu-item>
+        <el-menu-item index="1" @click="mySlot='mainPage'" onselectstart="return false">{{navContent[0]}}</el-menu-item>
+        <el-menu-item index="8"  @click="mySlot='paper'" onselectstart="return false">{{navContent[1]}}</el-menu-item>
+        <el-menu-item index="7"  @click="mySlot='dynamic'" onselectstart="return false">{{navContent[2]}}</el-menu-item>
+        <el-menu-item index="3"  @click="mySlot='researchProject'" onselectstart="return false">{{navContent[3]}}</el-menu-item>
+        <el-menu-item index="4" @click="mySlot='theRoadofSDN'" onselectstart="return false">{{navContent[4]}}</el-menu-item>
+        <el-menu-item index="5"  @click="mySlot='academicTeam'" onselectstart="return false">{{navContent[5]}}</el-menu-item>
+        <el-menu-item index="9"  @click="mySlot='recruit'" onselectstart="return false">{{navContent[6]}}</el-menu-item>
+        <el-menu-item index="6"  @click="mySlot='entertainment'" onselectstart="return false">{{navContent[7]}}</el-menu-item>
       </el-submenu>      
 
       </el-menu-item>
