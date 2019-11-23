@@ -159,7 +159,6 @@ import team from '../../static/学术团队/team'
       margin:0px;
       padding:0px;
   }
-
   .personLayout{
     display:grid;
     grid-template-columns: repeat(5,20%);

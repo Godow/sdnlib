@@ -117,7 +117,9 @@ import recruit from './recruit.vue'
 
 <style>
   
-
+  img{
+      pointer-events: none;
+  }
 
   .el-carousel__item:nth-child(2n) {
      background-color: #99a9bf;

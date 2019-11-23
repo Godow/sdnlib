@@ -50,6 +50,9 @@
       padding:0px;
       
   }
+  img{
+      pointer-events: none;
+  }
   #picLayout{
     display:grid;
     grid-template-columns: repeat(3, 33.33%);
