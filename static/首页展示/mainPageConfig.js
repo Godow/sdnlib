@@ -21,7 +21,7 @@ const mainPageInfo = {
     
     'footerContent':[
         '地址：350116，福建省，福州市，学园路，福州大学数学与计算机科学学院2号楼504-2室',
-        'Copyright@福州大学 SDN未来网络实验室 All Rights Reserved.'
+        'Copyright@福州大学 SDN未来网络实验室 All Rights Reserved'
     ],
 }
 

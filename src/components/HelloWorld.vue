@@ -48,10 +48,16 @@
       <component id="slotComponent" :is="mySlot"></component>
     </el-main>
 
-    <el-footer style="margin:0;padding:0;">
-      <footer style="font-size:15px;height:60px;width:100%;display:block;line-height:30px;">
-        <p id="footerPhoneIgnore" >{{footerContent1}}</p>
-        <p id="footerPhone" >{{footerContent2}}</p>    
+    <el-footer id="el_footer" style="height: 40px!important">
+      <footer >
+        <div v-if="footerContent1 == ''" style="font-size:16px;height:40px;width:100%;display:block;line-height:40px;">
+          <p id="footerPhone" >{{footerContent2}}</p>   
+        </div>
+        <div v-else style="font-size:13px;height:40px;width:100%;display:block;line-height:20px;">
+          <p id="footerPhoneIgnore" >{{footerContent1}}</p>
+          <p id="footerPhone" >{{footerContent2}}</p>    
+        </div>
+        
       </footer>
     </el-footer>
 </el-container>
@@ -151,6 +157,16 @@ import recruit from './recruit.vue'
     background-color:#545c64;
     color:white;
   }
+  element.style {
+    height: 40px!important;
+  }
+  #el_footer{
+    margin:0;
+    padding:0;
+    position:fixed;
+    bottom:0px;
+    width:100%;
+  }
   @media screen and (max-width: 1100px) {
     #SDN{
         display:none;
@@ -174,7 +190,7 @@ import recruit from './recruit.vue'
       display:none;
     }
     #footerPhone{
-      line-height:60px;
+      line-height:40px;
       font-size:11px;
     }
     #SDN{

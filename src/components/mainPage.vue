@@ -1,8 +1,8 @@
 <template>
     <div id="mainPage" align="center" style="padding:0;margin:0 auto;border:0;">
-      <el-carousel height="calc(100vh - 120px)">
+      <el-carousel height="calc(100vh - 100px)">
       <el-carousel-item v-for="item in imgCnt" :key="item.id">   
-        <img :src=imgPath[item-1] style="margin-top:calc((100vh - 135px)/2);transform:translateY(-50%);height:90vmin"></img>
+        <img :src=imgPath[item-1] style="margin-top:calc((100vh - 100px)/2);transform:translateY(-50%);height:90vmin"></img>
       </el-carousel-item>
     </el-carousel>
     
