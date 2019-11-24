@@ -4,7 +4,8 @@
   
 
 
-    <el-menu  
+
+    <el-menu  style="border:0px!important"
     :default-active="activeIndex2"
     class="el-menu-demo"
     mode="horizontal"
@@ -18,7 +19,7 @@
       <div style="color:#ffffff;clear:both;margin-right:20px;line-height:30px">{{libName[1]}}</div>
     </div>
 
-  
+
     <el-menu-item index="1" @click="mySlot='mainPage'" class="menuItem" onselectstart="return false">{{navContent[0]}}</el-menu-item>
     <el-menu-item index="8"  @click="mySlot='paper'" class="menuItem" onselectstart="return false">{{navContent[1]}}</el-menu-item>
     <el-menu-item index="7"  @click="mySlot='dynamic'" class="menuItem" onselectstart="return false">{{navContent[2]}}</el-menu-item>
@@ -52,7 +53,7 @@
       <p id="footerPhone" >{{footerContent2}}</p>   
     </div>
     <div v-else style="font-size:13px;height:40px;width:100%;display:block;line-height:20px;">
-      <p id="footerPhoneIgnore" >{{footerContent1}}</p>
+      <p id="footerPhoneIgnore" ><i class="el-icon-map-location"></i> {{footerContent1}}</p>
       <p id="footerPhone" >{{footerContent2}}</p>    
     </div>
   </footer>
