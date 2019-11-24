@@ -3,7 +3,9 @@
 本文件夹用于配置首页，可配置四部分内容：
 
 第一部分：实验室名称-libName
-
+```
+libName是一个数组，第一个元素是`实验室名英文缩写`，第二个元素为`实验室全称`。
+```
 第二部分：导航栏内容-navContent
 
 第三部分：轮播图-slider
@@ -21,7 +23,7 @@
 
 ```js
 const mainPageInfo = {
-    'libName':'SDN未来网络实验室',
+    'libName':['SDN','1未来网络实验室'],
     'navContent':[
         '首页',
         '学术论文',

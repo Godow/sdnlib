@@ -92,7 +92,7 @@ import team from '../../static/学术团队/team'
             graduateInfo:graduate.graduateInfo,
             constBachelorPath:'../../static/学术团队/本科生/',
             bachelorInfo:bachelor.bachelorInfo,
-            nonePhoto:'../../static/学术团队/config_file/nonePhoto.jpg',
+            nonePhoto:'../../static/config_files/nonePhoto.jpg',
             teamInfo:team.teamInfo,
 
         }

@@ -4,63 +4,59 @@
   
 
 
+    <el-menu  
+    :default-active="activeIndex2"
+    class="el-menu-demo"
+    mode="horizontal"
+    @select="handleSelect"
+    background-color="#161415"
+    text-color="#fff"
+    menu-trigger="click"
+    active-text-color="#ffd04b">
+    <div  id="SDN" onselectstart="return false">
+      <div style="margin-right:10vw;line-height:30px;display:block"><span style="color:#F15A23;">{{libName[0]}}</span> <span style="color:#ffffff;">{{nowYear}}</span></div>
+      <div style="color:#ffffff;clear:both;margin-right:20px;line-height:30px">{{libName[1]}}</div>
+    </div>
 
-  <el-container style="margin:0;padding:0">
-    <el-header style="margin:0;padding:0">
-      <el-menu  id="el-menu"
-      :default-active="activeIndex2"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-      background-color="#545c64"
-      text-color="#fff"
-      menu-trigger="click"
-      active-text-color="#ffd04b">
-      <div id="SDN" onselectstart="return false">{{libName}}</div>
+  
+    <el-menu-item index="1" @click="mySlot='mainPage'" class="menuItem" onselectstart="return false">{{navContent[0]}}</el-menu-item>
+    <el-menu-item index="8"  @click="mySlot='paper'" class="menuItem" onselectstart="return false">{{navContent[1]}}</el-menu-item>
+    <el-menu-item index="7"  @click="mySlot='dynamic'" class="menuItem" onselectstart="return false">{{navContent[2]}}</el-menu-item>
+    <el-menu-item index="3"  @click="mySlot='researchProject'" class="menuItem" onselectstart="return false">{{navContent[3]}}</el-menu-item>
+    <el-menu-item index="4" @click="mySlot='theRoadofSDN'" class="menuItem" onselectstart="return false">{{navContent[4]}}</el-menu-item>
+    <el-menu-item index="5"  @click="mySlot='academicTeam'" class="menuItem" onselectstart="return false">{{navContent[5]}}</el-menu-item>
+    <el-menu-item index="9"  @click="mySlot='recruit'" class="menuItem" onselectstart="return false">{{navContent[6]}}</el-menu-item>
+    <el-menu-item index="6"  @click="mySlot='entertainment'" class="menuItem" onselectstart="return false">{{navContent[7]}}</el-menu-item>
 
-      <el-menu-item index="1" @click="mySlot='mainPage'" class="menuItem" onselectstart="return false">{{navContent[0]}}</el-menu-item>
-      <el-menu-item index="8"  @click="mySlot='paper'" class="menuItem" onselectstart="return false">{{navContent[1]}}</el-menu-item>
-      <el-menu-item index="7"  @click="mySlot='dynamic'" class="menuItem" onselectstart="return false">{{navContent[2]}}</el-menu-item>
-      <el-menu-item index="3"  @click="mySlot='researchProject'" class="menuItem" onselectstart="return false">{{navContent[3]}}</el-menu-item>
-      <el-menu-item index="4" @click="mySlot='theRoadofSDN'" class="menuItem" onselectstart="return false">{{navContent[4]}}</el-menu-item>
-      <el-menu-item index="5"  @click="mySlot='academicTeam'" class="menuItem" onselectstart="return false">{{navContent[5]}}</el-menu-item>
-      <el-menu-item index="9"  @click="mySlot='recruit'" class="menuItem" onselectstart="return false">{{navContent[6]}}</el-menu-item>
-      <el-menu-item index="6"  @click="mySlot='entertainment'" class="menuItem" onselectstart="return false">{{navContent[7]}}</el-menu-item>
+    <el-submenu index="2" class="phoneMenuItem" >
+      <template slot="title"><i type="primary" class="el-icon-menu"></i></template>
+      <el-menu-item index="1" @click="mySlot='mainPage'" onselectstart="return false">{{navContent[0]}}</el-menu-item>
+      <el-menu-item index="8"  @click="mySlot='paper'" onselectstart="return false">{{navContent[1]}}</el-menu-item>
+      <el-menu-item index="7"  @click="mySlot='dynamic'" onselectstart="return false">{{navContent[2]}}</el-menu-item>
+      <el-menu-item index="3"  @click="mySlot='researchProject'" onselectstart="return false">{{navContent[3]}}</el-menu-item>
+      <el-menu-item index="4" @click="mySlot='theRoadofSDN'" onselectstart="return false">{{navContent[4]}}</el-menu-item>
+      <el-menu-item index="5"  @click="mySlot='academicTeam'" onselectstart="return false">{{navContent[5]}}</el-menu-item>
+      <el-menu-item index="9"  @click="mySlot='recruit'" onselectstart="return false">{{navContent[6]}}</el-menu-item>
+      <el-menu-item index="6"  @click="mySlot='entertainment'" onselectstart="return false">{{navContent[7]}}</el-menu-item>
+    </el-submenu>      
 
-      <el-submenu index="2" class="phoneMenuItem" >
-        <template slot="title"><i type="primary" class="el-icon-menu"></i></template>
-        <el-menu-item index="1" @click="mySlot='mainPage'" onselectstart="return false">{{navContent[0]}}</el-menu-item>
-        <el-menu-item index="8"  @click="mySlot='paper'" onselectstart="return false">{{navContent[1]}}</el-menu-item>
-        <el-menu-item index="7"  @click="mySlot='dynamic'" onselectstart="return false">{{navContent[2]}}</el-menu-item>
-        <el-menu-item index="3"  @click="mySlot='researchProject'" onselectstart="return false">{{navContent[3]}}</el-menu-item>
-        <el-menu-item index="4" @click="mySlot='theRoadofSDN'" onselectstart="return false">{{navContent[4]}}</el-menu-item>
-        <el-menu-item index="5"  @click="mySlot='academicTeam'" onselectstart="return false">{{navContent[5]}}</el-menu-item>
-        <el-menu-item index="9"  @click="mySlot='recruit'" onselectstart="return false">{{navContent[6]}}</el-menu-item>
-        <el-menu-item index="6"  @click="mySlot='entertainment'" onselectstart="return false">{{navContent[7]}}</el-menu-item>
-      </el-submenu>      
+    </el-menu-item>
+  </el-menu>
 
-      </el-menu-item>
-    </el-menu>
 
-    </el-header>
+    <component id="slotComponent" :is="mySlot"></component>
 
-    <el-main style="margin:0;padding:0">
-      <component id="slotComponent" :is="mySlot"></component>
-    </el-main>
 
-    <el-footer id="el_footer" style="height: 40px!important">
-      <footer >
-        <div v-if="footerContent1 == ''" style="font-size:16px;height:40px;width:100%;display:block;line-height:40px;">
-          <p id="footerPhone" >{{footerContent2}}</p>   
-        </div>
-        <div v-else style="font-size:13px;height:40px;width:100%;display:block;line-height:20px;">
-          <p id="footerPhoneIgnore" >{{footerContent1}}</p>
-          <p id="footerPhone" >{{footerContent2}}</p>    
-        </div>
-        
-      </footer>
-    </el-footer>
-</el-container>
+  <footer >
+    <div v-if="footerContent1 == ''" style="font-size:16px;height:40px;width:100%;display:block;line-height:40px;">
+      <p id="footerPhone" >{{footerContent2}}</p>   
+    </div>
+    <div v-else style="font-size:13px;height:40px;width:100%;display:block;line-height:20px;">
+      <p id="footerPhoneIgnore" >{{footerContent1}}</p>
+      <p id="footerPhone" >{{footerContent2}}</p>    
+    </div>
+  </footer>
+  
 
 
 
@@ -104,7 +100,11 @@ import recruit from './recruit.vue'
         footerContent1:mainPageConfig.mainPageInfo.footerContent[0],
         footerContent2:mainPageConfig.mainPageInfo.footerContent[1],
         libName:mainPageConfig.mainPageInfo.libName,
+        nowYear:'',
       }
+    },
+    created:function(){
+      this.nowYear = new Date().getFullYear();
     },
     methods: {
       handleSelect(key, keyPath) {
@@ -131,16 +131,11 @@ import recruit from './recruit.vue'
   #HelloWorld{
 
   }
-  footer{
-    
-  }
+
   #SDN{
-    
-    font-size:30px;
+    font-size:22px;
+    font-family: 'OpenSansLight', serif;
     float:right;
-    margin-right:40px;
-    color:white;
-    line-height:60px;
   }
 
   #slotComponent{
@@ -152,24 +147,24 @@ import recruit from './recruit.vue'
     
   }
   #footerPhone{
-    background-color:#545c64;
+    background-color:#161415;
     color:white;
   }
   #footerPhoneIgnore{
-    background-color:#545c64;
+    background-color:#161415;
     color:white;
   }
   element.style {
     height: 40px!important;
   }
-  #el_footer{
+  footer{
     margin:0;
     padding:0;
     position:fixed;
     bottom:0px;
     width:100%;
   }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 980px) {
     #SDN{
         display:none;
     }
@@ -196,9 +191,8 @@ import recruit from './recruit.vue'
       font-size:11px;
     }
     #SDN{
-        display:block;
-        font-size:15px;
-        margin-right:15px;
+      display:block;
+      font-size:15px;
     }
     body {
       background-image:url('../../static/config_files/background_img.jpg');

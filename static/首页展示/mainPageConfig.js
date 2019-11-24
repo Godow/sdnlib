@@ -1,5 +1,5 @@
 const mainPageInfo = {
-    'libName':'SDN未来网络实验室',
+    'libName':['SDN','未来网络实验室'],
 
     'navContent':[
         '首页',

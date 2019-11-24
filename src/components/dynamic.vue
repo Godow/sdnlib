@@ -8,7 +8,7 @@
         :direction="direction"
         :size="drawerWidth"
         :before-close="handleClose">
-        <iframe :src=contentPath style="width:100%;height:100%"></iframe>
+            <iframe :src=contentPath style="width:100%;height:100%;"></iframe>
         </el-drawer>
 
         <div v-for="item,inx in dynamicInfo" style="margin-left:5vw;margin-top:20px;">
