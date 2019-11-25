@@ -45,7 +45,9 @@ import axios from 'axios'
   }
   #projectName{
        font-size:19px;
-       margin-left:15px;
+
+       margin:10px;
+        margin-left:0vw;
   }
   @media screen and (max-width: 820px) {
     #projectName{
