@@ -78,24 +78,43 @@
 </template>
 
 <script>
-import teacher from '../../static/学术团队/教师/teacher'
-import graduate from '../../static/学术团队/研究生/graduate'
-import bachelor from '../../static/学术团队/本科生/bachelor'
-import team from '../../static/学术团队/team'
+import axios from 'axios'
   export default {
     name:'academicTeam',
     data(){
         return {
             constTeacherPath:'../../static/学术团队/教师/',
-            teacherInfo:teacher.teacherInfo,
+            teacherInfo:'',
             constGraduatePath:'../../static/学术团队/研究生/',
-            graduateInfo:graduate.graduateInfo,
+            graduateInfo:'',
             constBachelorPath:'../../static/学术团队/本科生/',
-            bachelorInfo:bachelor.bachelorInfo,
+            bachelorInfo:'',
             nonePhoto:'../../static/config_files/nonePhoto.jpg',
-            teamInfo:team.teamInfo,
+            teamInfo:'',
 
         }
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/学术团队/team.json')
+      .then(function(response){
+        that.teamInfo=response.data.content;
+      })
+
+      axios.get('../../static/学术团队/教师/teacher.json')
+      .then(function(response){
+        that.teacherInfo=response.data.content;
+      })
+
+      axios.get('../../static/学术团队/研究生/graduate.json')
+      .then(function(response){
+        that.graduateInfo=response.data.content;
+      })
+
+      axios.get('../../static/学术团队/本科生/bachelor.json')
+      .then(function(response){
+        that.bachelorInfo=response.data.content;
+      })
     },
     computed:{
         newTeacherInfo:function() {

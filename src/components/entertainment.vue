@@ -3,12 +3,11 @@
         <img src="../../static/生活娱乐/show.jpg" style="width:100%;height:30vh;border:1px solid gray;"></img>
         <div style="margin-bottom:50px"></div>
 
-
             <div v-if='newEntertainmentInfo != ""'>
                 <div id="picLayout">
                     <div  v-for="item,inx in newEntertainmentInfo" style="margin-bottom:20px">
                         <div><img :src=item class="pic"></img></div>
-                        <span id="picName">{{entertainmentInfo[inx][0].split('/').slice(-1)[0].split('.')[0]}}</span>
+                        <span id="picName">{{entertainmentInfo[inx].split('/').slice(-1)[0].split('.')[0]}}</span>
                     </div>
                 </div>
             </div>
@@ -17,28 +16,32 @@
 </template>
 
 <script>
-    import entertainment from '../../static/生活娱乐/entertainment'
+    import axios from 'axios'
     export default {
         name:'entertainment',
         data(){
             return {
                 constEntertainmentPath:'../../static/生活娱乐/娱乐照片/',
-                entertainmentInfo:entertainment.entertainmentInfo,
+                entertainmentInfo:'',
             }
+        },
+        mounted:function(){
+            let that = this;
+            axios.get('../../static/生活娱乐/entertainment.json')
+            .then(function(response){
+                that.entertainmentInfo=response.data.content;
+                // console.log(that.entertainmentInfo);
+            })
         },
         computed:{
             newEntertainmentInfo:function(){
-            let temp=[];
-            let newPath=[];
-            for(let i=0;i < this.entertainmentInfo.length;i++){
-                temp=[];
-                for(let j=0;j < this.entertainmentInfo[0].length;j++){
-                    temp.push(this.constEntertainmentPath + this.entertainmentInfo[i][j]);
+                let temp=[];
+                let newPath=[];
+                for(let i=0;i < this.entertainmentInfo.length;i++){
+                    this.entertainmentInfo[i] = this.constEntertainmentPath + this.entertainmentInfo[i];
                 }
-                newPath.push(temp);
+                return this.entertainmentInfo;
             }
-            return newPath;
-        }
         }
     }
 </script>
@@ -49,9 +52,6 @@
       margin:0px;
       padding:0px;
       
-  }
-  img{
-      pointer-events: none;
   }
   #picLayout{
     display:grid;

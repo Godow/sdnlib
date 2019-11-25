@@ -6,15 +6,21 @@
 </template>
 
 <script>
-
-import recruit from  '../../static/招生简介/recruit'
+import axios from 'axios'
   export default {
     name:'recruit',
     data(){
         return {
-            recruitInfo:recruit.recruitInfo,
+            recruitInfo:'',
         }
-    }
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/招生简介/recruit.json')
+      .then(function(response){
+        that.recruitInfo=response.data.content;
+      })
+    },
   }
 </script>
 

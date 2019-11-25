@@ -17,15 +17,21 @@
 </template>
 
 <script>
-
-import paper from  '../../static/学术论文/paper'
+import paper from  '../../static/学术论文/paper.json'
+import axios from 'axios'
   export default {
     name:'paper',
     data(){
         return {
-            paperInfo:paper.paperInfo,
-            tmpCnt:0,
+            paperInfo:paper.content,
         }
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/学术论文/paper.json')
+      .then(function(response){
+        that.paperInfo=response.data.content;
+      })
     },
     methods:{
         yearSort:function(a,b){

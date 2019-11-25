@@ -5,8 +5,8 @@
 
         <div v-if="projectInfo != []">
             <div v-for="item,inx in projectInfo" style="margin:18px;margin-bottom:30px">
-                <h1 style="margin:15px;" align="">{{inx}}</h1>
-                <div v-for="item2,inx2 in item"  align="left" id="projectName">
+                <h1 style="margin:15px;" align="">{{Object.keys(item)[0]}}</h1>
+                <div v-for="item2,inx2 in Object.values(item)[0]"  align="left" id="projectName">
                 <span><i class="el-icon-circle-check" style="color:#04BFEA"></i> {{inx2+1}}. {{item2}}</span>
                 </div>
             </div>
@@ -16,14 +16,21 @@
 </template>
 
 <script>
-import researchProject from '../../static/科研项目/researchProject'
+import axios from 'axios'
   export default {
     name:'researchProject',
     data(){
         return {
-            projectInfo:researchProject.projectInfo,
+            projectInfo:'',
         }
-    }
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/科研项目/researchProject.json')
+      .then(function(response){
+        that.projectInfo=response.data.content;
+      })
+    },
   }
 </script>
 

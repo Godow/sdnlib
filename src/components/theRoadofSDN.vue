@@ -18,15 +18,21 @@
 </template>
 
 <script>
-
-import theRoadofSDN from  '../../static/SDN之路/theRoadofSDN'
+import axios from 'axios'
   export default {
     name:'theRoadofSDN',
     data(){
         return {
-            roadInfo:theRoadofSDN.roadInfo,
+            roadInfo:'',
         }
-    }
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/SDN之路/theRoadofSDN.json')
+      .then(function(response){
+        that.roadInfo=response.data.content;
+      })
+    },
   }
 </script>
 

@@ -26,12 +26,13 @@
 
 <script>
 
-import dynamic from  '../../static/学术动态/dynamic'
+import axios from 'axios'
+
   export default {
     name:'dynamic',
     data(){
         return {
-            dynamicInfo:dynamic.dynamicInfo,
+            dynamicInfo:'',
             contentPathConst:'../../static/学术动态/动态内容/',
             contentPath:'',
             iframePage:'',
@@ -39,6 +40,13 @@ import dynamic from  '../../static/学术动态/dynamic'
             direction: 'rtl',
             drawerWidth:'75vw'
         }
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/学术动态/dynamic.json')
+      .then(function(response){
+        that.dynamicInfo=response.data.content;
+      })
     },
     methods:{
         func(e){

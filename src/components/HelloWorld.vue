@@ -44,7 +44,6 @@
     </el-menu-item>
   </el-menu>
 
-
     <component id="slotComponent" :is="mySlot"></component>
 
 
@@ -68,7 +67,6 @@
 
 
 <script>
-import mainPageConfig from '../../static/首页展示/mainPageConfig'
 
 import mainPage from './mainPage.vue'
 import academicTeam from './academicTeam.vue'
@@ -78,6 +76,8 @@ import researchProject from './researchProject.vue'
 import paper from './paper.vue'
 import dynamic from './dynamic.vue'
 import recruit from './recruit.vue'
+
+import axios from 'axios'
 
 
   export default {
@@ -90,6 +90,7 @@ import recruit from './recruit.vue'
       paper,
       dynamic,
       recruit,
+      
     },
     data(){
       return {
@@ -97,15 +98,26 @@ import recruit from './recruit.vue'
         activeIndex: '1',
         activeIndex2: '1',
         footerContent:'',
-        navContent:mainPageConfig.mainPageInfo.navContent,
-        footerContent1:mainPageConfig.mainPageInfo.footerContent[0],
-        footerContent2:mainPageConfig.mainPageInfo.footerContent[1],
-        libName:mainPageConfig.mainPageInfo.libName,
+        navContent:'',
+        footerContent1:'',
+        footerContent2:'',
+        libName:'',
         nowYear:'',
       }
     },
     created:function(){
       this.nowYear = new Date().getFullYear();
+      console.log(this.navContent);
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/首页展示/mainPageConfig.json')
+      .then(function(response){
+        that.navContent=response.data.navContent;
+        that.footerContent1=response.data.footerContent[0];
+        that.footerContent2=response.data.footerContent[1];
+        that.libName=response.data.libName;
+      })
     },
     methods: {
       handleSelect(key, keyPath) {

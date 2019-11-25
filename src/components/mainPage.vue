@@ -10,21 +10,24 @@
 </template>
 
 <script>
-import mainPageConfig from '../../static/首页展示/mainPageConfig'
+import axios from 'axios'
 
 var fs = require('fs');
 var path = require('path');
   export default {
     name:'mainPage',
-    components:{
- 
-    },
     data(){
       return {
         constPath:'../../static/首页展示/',
-        showImg:mainPageConfig.mainPageInfo.slider,
-        
+        showImg:'',
       }
+    },
+    mounted:function(){
+      let that = this;
+      axios.get('../../static/首页展示/mainPageConfig.json')
+      .then(function(response){
+        that.showImg=response.data.slider;
+      })
     },
     computed:{
       imgCnt:function(){
