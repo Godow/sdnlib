@@ -1,10 +1,5 @@
 <template>
 <div id="HelloWorld">
-
-  
-
-
-
     <el-menu  style="border:0px!important"
     :default-active="activeIndex2"
     class="el-menu-demo"
@@ -80,6 +75,7 @@ import recruit from './recruit.vue'
 import axios from 'axios'
 
 
+
   export default {
     components:{
       mainPage,
@@ -142,7 +138,6 @@ import axios from 'axios'
      background-color: #d3dce6;
   }
   #HelloWorld{
-
   }
 
   #SDN{

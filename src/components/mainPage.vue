@@ -12,8 +12,6 @@
 <script>
 import axios from 'axios'
 
-var fs = require('fs');
-var path = require('path');
   export default {
     name:'mainPage',
     data(){

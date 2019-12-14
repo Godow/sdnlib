@@ -17,13 +17,12 @@
 </template>
 
 <script>
-import paper from  '../../static/学术论文/paper.json'
 import axios from 'axios'
   export default {
     name:'paper',
     data(){
         return {
-            paperInfo:paper.content,
+            paperInfo:'',
         }
     },
     mounted:function(){
