@@ -18,6 +18,8 @@
 
 <script>
 import axios from 'axios'
+import netPath from '../../static/config_files/netPath'
+
   export default {
     name:'paper',
     data(){
@@ -27,7 +29,7 @@ import axios from 'axios'
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/学术论文/paper.json')
+      axios.get(netPath.path+'./static/学术论文/paper.json')
       .then(function(response){
         that.paperInfo=response.data.content;
       })

@@ -17,6 +17,7 @@
 
 <script>
 import axios from 'axios'
+import netPath from '../../static/config_files/netPath'
   export default {
     name:'researchProject',
     data(){
@@ -26,7 +27,7 @@ import axios from 'axios'
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/科研项目/researchProject.json')
+      axios.get(netPath.path+'./static/科研项目/researchProject.json')
       .then(function(response){
         that.projectInfo=response.data.content;
       })

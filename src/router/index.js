@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import e404 from '../components/e404.vue'
 import vipvideo from '../components/vipvideo.vue'
 import musicDownload from '../components/musicDownload.vue'
 
 Vue.use(Router)
 
 export default new Router({
-  mode:'history',
+  // mode:'history',
   routes: [
     {
       path: '/',
@@ -24,11 +23,6 @@ export default new Router({
       path:'/musicDownload',
       name:'musicDownload',
       component: musicDownload
-    },
-    {
-      path: '/**',
-      name:'e404',
-      component: e404
     }
   ]
 })

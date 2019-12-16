@@ -7,6 +7,8 @@
 
 <script>
 import axios from 'axios'
+import netPath from '../../static/config_files/netPath'
+
   export default {
     name:'recruit',
     data(){
@@ -16,7 +18,7 @@ import axios from 'axios'
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/招生简介/recruit.json')
+      axios.get(netPath.path+'./static/招生简介/recruit.json')
       .then(function(response){
         that.recruitInfo=response.data.content;
       })

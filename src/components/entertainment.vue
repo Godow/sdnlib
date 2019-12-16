@@ -17,17 +17,19 @@
 
 <script>
     import axios from 'axios'
+    import netPath from '../../static/config_files/netPath'
+
     export default {
         name:'entertainment',
         data(){
             return {
-                constEntertainmentPath:'../../static/生活娱乐/娱乐照片/',
+                constEntertainmentPath:netPath.path+'./static/生活娱乐/娱乐照片/',
                 entertainmentInfo:'',
             }
         },
         mounted:function(){
             let that = this;
-            axios.get('../../static/生活娱乐/entertainment.json')
+            axios.get(netPath.path+'./static/生活娱乐/entertainment.json')
             .then(function(response){
                 that.entertainmentInfo=response.data.content;
                 // console.log(that.entertainmentInfo);

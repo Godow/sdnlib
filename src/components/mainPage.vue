@@ -11,18 +11,19 @@
 
 <script>
 import axios from 'axios'
+import netPath from '../../static/config_files/netPath'
 
   export default {
     name:'mainPage',
     data(){
       return {
-        constPath:'../../static/首页展示/',
+        constPath:netPath.path+'./static/首页展示/',
         showImg:'',
       }
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/首页展示/mainPageConfig.json')
+      axios.get(netPath.path+'./static/首页展示/mainPageConfig.json')
       .then(function(response){
         that.showImg=response.data.slider;
       })

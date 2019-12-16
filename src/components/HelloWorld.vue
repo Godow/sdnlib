@@ -73,7 +73,7 @@ import dynamic from './dynamic.vue'
 import recruit from './recruit.vue'
 
 import axios from 'axios'
-
+import netPath from '../../static/config_files/netPath'
 
 
   export default {
@@ -107,7 +107,7 @@ import axios from 'axios'
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/首页展示/mainPageConfig.json')
+      axios.get(netPath.path+'./static/首页展示/mainPageConfig.json')
       .then(function(response){
         that.navContent=response.data.navContent;
         that.footerContent1=response.data.footerContent[0];

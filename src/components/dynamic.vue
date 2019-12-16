@@ -27,13 +27,13 @@
 <script>
 
 import axios from 'axios'
-
+import netPath from '../../static/config_files/netPath'
   export default {
     name:'dynamic',
     data(){
         return {
             dynamicInfo:'',
-            contentPathConst:'../../static/学术动态/动态内容/',
+            contentPathConst:netPath.path+'./static/学术动态/动态内容/',
             contentPath:'',
             iframePage:'',
             drawer: false,
@@ -43,7 +43,7 @@ import axios from 'axios'
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/学术动态/dynamic.json')
+      axios.get(netPath.path+'./static/学术动态/dynamic.json')
       .then(function(response){
         that.dynamicInfo=response.data.content;
       })

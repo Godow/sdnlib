@@ -19,6 +19,8 @@
 
 <script>
 import axios from 'axios'
+import netPath from '../../static/config_files/netPath'
+
   export default {
     name:'theRoadofSDN',
     data(){
@@ -28,7 +30,7 @@ import axios from 'axios'
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/SDN之路/theRoadofSDN.json')
+      axios.get(netPath.path+'./static/SDN之路/theRoadofSDN.json')
       .then(function(response){
         that.roadInfo=response.data.content;
       })

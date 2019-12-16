@@ -79,39 +79,41 @@
 
 <script>
 import axios from 'axios'
+import netPath from '../../static/config_files/netPath'
+
   export default {
     name:'academicTeam',
     data(){
         return {
-            constTeacherPath:'../../static/学术团队/教师/',
+            constTeacherPath:netPath.path+'./static/学术团队/教师/',
             teacherInfo:'',
-            constGraduatePath:'../../static/学术团队/研究生/',
+            constGraduatePath:netPath.path+'./static/学术团队/研究生/',
             graduateInfo:'',
-            constBachelorPath:'../../static/学术团队/本科生/',
+            constBachelorPath:netPath.path+'./static/学术团队/本科生/',
             bachelorInfo:'',
-            nonePhoto:'../../static/config_files/nonePhoto.jpg',
+            nonePhoto:netPath.path+'./static/config_files/nonePhoto.jpg',
             teamInfo:'',
 
         }
     },
     mounted:function(){
       let that = this;
-      axios.get('../../static/学术团队/team.json')
+      axios.get(netPath.path+'./static/学术团队/team.json')
       .then(function(response){
         that.teamInfo=response.data.content;
       })
 
-      axios.get('../../static/学术团队/教师/teacher.json')
+      axios.get(netPath.path+'./static/学术团队/教师/teacher.json')
       .then(function(response){
         that.teacherInfo=response.data.content;
       })
 
-      axios.get('../../static/学术团队/研究生/graduate.json')
+      axios.get(netPath.path+'./static/学术团队/研究生/graduate.json')
       .then(function(response){
         that.graduateInfo=response.data.content;
       })
 
-      axios.get('../../static/学术团队/本科生/bachelor.json')
+      axios.get(netPath.path+'./static/学术团队/本科生/bachelor.json')
       .then(function(response){
         that.bachelorInfo=response.data.content;
       })
