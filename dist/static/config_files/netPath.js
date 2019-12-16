@@ -1,4 +1,4 @@
-const path='//god.js.org/sdnlib/';
+const path='../../';
 
 export default{
     path
