@@ -1,4 +1,1 @@
-module.exports = {
-    // 选项...
-    publicPath: "./",
-}
+export const publicPath = "./";
