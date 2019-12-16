@@ -1,4 +1,7 @@
 module.exports = {
     // 选项...
-    publicPath: '/sdnlib/'
-  }
+    publicPath: "/sdnlib/",
+    outputDir: "dist",
+    assetsDir:"static",
+    indexPath:"index.html",
+}
