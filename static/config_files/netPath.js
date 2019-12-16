@@ -1,4 +1,4 @@
-const path='//god.js.org/test/';
+const path='../../';
 
 export default{
     path
